@@ -4,6 +4,7 @@
 ## main
 
 - main branch is now `main`. Skip version up to `v.0.10.3` to match `Rescript@0.10.3`
+- change namespace to `@reasonable/react`
 
 ## v0.10.3
 
