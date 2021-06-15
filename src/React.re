@@ -22,7 +22,7 @@ external createElement: (component('props), 'props) => element =
 [@bs.module "react"]
 external cloneElement: (element, 'props) => element = "cloneElement";
 
-[@bs.splice] [@bs.module "react"]
+[@bs.variadic] [@bs.module "react"]
 external createElementVariadic:
   (component('props), 'props, array(element)) => element =
   "createElement";
