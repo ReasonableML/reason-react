@@ -1,5 +1,5 @@
 {
-  "name": "reason-react",
+  "name": "@reasonable/react",
   "version": "0.9.1",
   "description": "React bindings for Reason",
   "files": [

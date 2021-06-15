@@ -1,6 +1,6 @@
 type t;
 
-[@bs.obj]
+[@obj]
 external make:
   (
     ~azimuth: string=?,
@@ -422,8 +422,8 @@ external make:
   t;
 
 /* CSS2Properties: https://www.w3.org/TR/DOM-Level-2-Style/css.html#CSS-CSS2Properties */
-[@bs.val]
-external combine: ([@bs.as {json|{}|json}] _, t, t) => t = "Object.assign";
+[@val]
+external combine: ([@as {json|{}|json}] _, t, t) => t = "Object.assign";
 
 external _dictToStyle: Js.Dict.t(string) => t = "%identity";
 
@@ -433,6 +433,6 @@ let unsafeAddProp = (style, key, value) => {
   combine(style, _dictToStyle(dict));
 };
 
-[@bs.val]
-external unsafeAddStyle: ([@bs.as {json|{}|json}] _, t, Js.t({..})) => t =
+[@val]
+external unsafeAddStyle: ([@as {json|{}|json}] _, t, Js.t({..})) => t =
   "Object.assign";

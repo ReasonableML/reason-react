@@ -1,43 +1,43 @@
-[@bs.get] external location: Dom.window => Dom.location = "location";
+[@get] external location: Dom.window => Dom.location = "location";
 
-[@bs.send]
+[@send]
 /* actually the cb is Dom.event => unit, but let's restrict the access for now */
 external addEventListener: (Dom.window, string, unit => unit) => unit =
   "addEventListener";
 
-[@bs.send]
+[@send]
 external removeEventListener: (Dom.window, string, unit => unit) => unit =
   "removeEventListener";
 
-[@bs.send]
+[@send]
 external dispatchEvent: (Dom.window, Dom.event) => unit = "dispatchEvent";
 
-[@bs.get] external pathname: Dom.location => string = "pathname";
+[@get] external pathname: Dom.location => string = "pathname";
 
-[@bs.get] external hash: Dom.location => string = "hash";
+[@get] external hash: Dom.location => string = "hash";
 
-[@bs.get] external search: Dom.location => string = "search";
+[@get] external search: Dom.location => string = "search";
 
-[@bs.send]
+[@send]
 external pushState:
-  (Dom.history, [@bs.as {json|null|json}] _, [@bs.as ""] _, ~href: string) =>
+  (Dom.history, [@as {json|null|json}] _, [@as ""] _, ~href: string) =>
   unit =
   "pushState";
 
-[@bs.send]
+[@send]
 external replaceState:
-  (Dom.history, [@bs.as {json|null|json}] _, [@bs.as ""] _, ~href: string) =>
+  (Dom.history, [@as {json|null|json}] _, [@as ""] _, ~href: string) =>
   unit =
   "replaceState";
 
-[@bs.val] external event: 'a = "Event";
+[@val] external event: 'a = "Event";
 
-[@bs.new] external makeEventIE11Compatible: string => Dom.event = "Event";
+[@new] external makeEventIE11Compatible: string => Dom.event = "Event";
 
-[@bs.val] [@bs.scope "document"]
+[@val] [@scope "document"]
 external createEventNonIEBrowsers: string => Dom.event = "createEvent";
 
-[@bs.send]
+[@send]
 external initEventNonIEBrowsers: (Dom.event, string, bool, bool) => unit =
   "initEvent";
 
