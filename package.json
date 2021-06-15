@@ -1,13 +1,14 @@
 {
   "name": "@reasonable/react",
-  "version": "0.9.1",
+  "version": "0.10.3",
   "description": "React bindings for Reason",
   "files": [
     "README.md",
     "HISTORY.md",
     "LICENSE",
     "bsconfig.json",
-    "src"
+    "src/**/*.re",
+    "src/**/*.rei"
   ],
   "scripts": {
     "build": "bsb -make-world",
