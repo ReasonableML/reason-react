@@ -1,7 +1,7 @@
 {
   "name": "@reasonable/react",
   "version": "0.10.3",
-  "description": "React bindings for Reason",
+  "description": "React bindings for Reason and Rescript",
   "files": [
     "README.md",
     "HISTORY.md",
@@ -19,14 +19,14 @@
   },
   "keywords": [
     "reasonml",
-    "bucklescript",
+    "rescript",
     "react"
   ],
   "author": "",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/reasonml/reason-react.git"
+    "url": "git+https://github.com/ReasonableML/reason-react.git"
   },
   "homepage": "https://reasonml.github.io/reason-react/",
   "devDependencies": {
@@ -54,5 +54,8 @@
     "transformIgnorePatterns": [
       "node_modules/(?!(bs-platform|reason-react|reason-react-compat|reason-react-update|bs-webapi|bs-css|bs-css-emotion|reason-test-framework)/)"
     ]
+  },
+  "bugs": {
+    "url": "https://github.com/ReasonableML/reason-react/issues"
   }
 }
