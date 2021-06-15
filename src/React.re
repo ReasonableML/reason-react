@@ -13,7 +13,8 @@ type componentLike('props, 'return) = 'props => 'return;
 type component('props) = componentLike('props, element);
 
 /* this function exists to prepare for making `component` abstract */
-external component: componentLike('props, element) => component('props) = "%identity";
+external component: componentLike('props, element) => component('props) =
+  "%identity";
 
 [@bs.module "react"]
 external createElement: (component('props), 'props) => element =
@@ -153,33 +154,35 @@ module Suspense = {
 };
 
 /* Experimental React.SuspenseList */
-module SuspenseList = {
-  type revealOrder;
-  type tail;
-  [@bs.obj]
-  external makeProps:
-    (
-      ~children: element=?,
-      ~revealOrder: [ | `forwards | `backwards | `together]=?,
-      ~tail:  [ | `collapsed | `hidden]=?,
-      unit
-    ) =>
-    {
-      .
-      "children": option(element),
-      "revealOrder": option(revealOrder),
-      "tail": option(tail),
-    };
+module Experimental = {
+  module SuspenseList = {
+    type revealOrder;
+    type tail;
+    [@bs.obj]
+    external makeProps:
+      (
+        ~children: element=?,
+        ~revealOrder: [ | `forwards | `backwards | `together]=?,
+        ~tail: [ | `collapsed | `hidden]=?,
+        unit
+      ) =>
+      {
+        .
+        "children": option(element),
+        "revealOrder": option(revealOrder),
+        "tail": option(tail),
+      };
 
-  [@bs.module "react"]
-  external make:
-    component({
-      .
-      "children": option(element),
-      "revealOrder": option(revealOrder),
-      "tail": option(tail),
-    }) =
-    "SuspenseList";
+    [@bs.module "react"]
+    external make:
+      component({
+        .
+        "children": option(element),
+        "revealOrder": option(revealOrder),
+        "tail": option(tail),
+      }) =
+      "SuspenseList";
+  };
 };
 /* HOOKS */
 
