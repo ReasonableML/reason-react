@@ -1,6 +1,6 @@
 # [ReasonReact](https://reasonml.github.io/reason-react/)
 
-**Note on this repo**: This is a `Reason` syntax drop in replacement for [`@rescript/react@10.3`](https://github.com/rescript-lang/rescript-react/tree/v0.10.3). Let's you keep using `Reason` syntax for a while during the transition or forever. The tests are passing.
+**Note on this repo**: This is a `Reason` syntax drop in replacement for [`@rescript/react@10.3`](https://github.com/rescript-lang/rescript-react/tree/v0.10.3). Let's you keep using `Reason` syntax for a while during the transition or forever. The tests are passing. You can see it used at https://github.com/idkjs/rescript-hacker-news/tree/reasonable
 
 ### Installation
 
